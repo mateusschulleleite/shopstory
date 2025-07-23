@@ -5,8 +5,8 @@ import "./Header.scss";
 
 export default function Header() {
   return (
-    <header className="header d-flex justify-content-center p-3">
-      <div className="d-flex w-50 position-relative">
+    <header className="header d-flex p-3 ps-4">
+      <div className="d-flex w-25 position-relative">
         <div className="icon-search d-flex align-items-center fs-4 position-absolute top-50 translate-middle-y text-danger">
           <IoSearchOutline />
         </div>

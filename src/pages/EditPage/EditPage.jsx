@@ -1,12 +1,12 @@
-import React, { useRef, useState } from "react";
-import "./NewPage.scss";
+import React, { useEffect, useRef, useState } from "react";
+import "./EditPage.scss";
 import Nav from "../../components/Nav/Nav";
 import { uploadVideo } from "../../../lib/sendVideo";
 import { useParams } from "react-router";
 
-export default function NewPage() {
+export default function EditPage({ urls }) {
   const { id } = useParams();
-  console.log(id)
+  console.log(id);
 
   const [url, setUrl] = useState("");
   const [video, setVideo] = useState([]);
@@ -27,12 +27,16 @@ export default function NewPage() {
     inputVideoRef.current.value = "";
   };
 
+  useEffect(() => {
+    setUrl(urls[id].urlPage)
+  }, [id]);
+
   return (
     <div className="newpage d-flex bg-light">
       <Nav />
       <div className="right p-4">
         <div className="mb-5">
-          <h4>Nova página</h4>
+          <h4>Editar página</h4>
         </div>
         <div className="form">
           <div className="mb-3">
